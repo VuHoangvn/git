@@ -18,7 +18,11 @@ class Engine(object):
 		
 		while True:
 			print "\n--------"
-			next_scene_name = current_scene.enter()
+			if current_scene is not None:
+				next_scene_name = current_scene.enter()
+			else:
+				print ("No more scenes!")
+				break # leave the loop
 			current_scene = self.scene_map.next_scene(next_scene_name)
 			
 class Death(Scene):
@@ -205,6 +209,6 @@ class Map(object):
 		return self.next_scene(self.start_scene)
 		
 
-a_map = Map('central_corridor')
+a_map = Map('the_bridge')
 a_game = Engine(a_map)
 a_game.play()
