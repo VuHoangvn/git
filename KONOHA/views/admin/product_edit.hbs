@@ -1,0 +1,90 @@
+{{> menu}}
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+        <link rel='stylesheet' href='/stylesheets/style.css'/>
+<div class="col-lg-9">
+    <form method="post" class="form-horizontal" id="insert_form" action="/admin/product/update" enctype="multipart/form-data" data-toggle="validator">
+        <div class="col-lg-12">
+            <div class="page-header">
+                <h2>Edit product</h2>
+            </div>
+            <div class="form-group">
+                <label for="frmProductTitle" class="col-sm-2 control-label">Product title *</label>
+                <div class="col-sm-10">
+                    <input type="text" id="frmProductTitle" name="frmProductTitle" class="form-control" minlength="5" maxlength="200" value="{{product.title}}" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="frmProductCategory" class="col-sm-2 control-label" >Category *</label>
+                <div class="col-sm-10">
+                    <input type="text" id="frmProductCategory" name="frmProductCategory" class="form-control" minlength="5" maxlength="200" value="{{product.category}}" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="frmProductImage" class="col-sm-2 control-label">Image *</label>
+                <div class="col-sm-10">
+                    <input type="file" value="" id="frmProductImage" required="required" class="form-control" name="frmProductImage">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="frmProductQuantity" class="col-sm-2 control-label">Product quantity *</label>
+                <div class="col-sm-10">
+                    <input type="text" id="frmProductQuantity" name="frmProductQuantity" class="form-control" maxlength="200" value="{{product.quantity}}" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="frmProductPrice" class="col-sm-2 control-label">Product price *</label>
+                <div class="col-sm-6">
+                    <div class="input-group">
+                        <span class="input-group-addon">$</span>
+                        <input type="number" name="frmProductPrice" class="form-control" step="any" value="{{product}}" req.priceuired/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="frmProductAuthor" class="col-sm-2 control-label">Product author *</label>
+                <div class="col-sm-10">
+                    <input type="text" id="frmProductAuthor" name="frmProductAuthor" class="form-control" maxlength="200" value="{{product.author}}" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="frmProductPublisher" class="col-sm-2 control-label">Publisher *</label>
+                <div class="col-sm-10">
+                    <input type="text" id="frmProductPublisher" name="frmProductPublisher" class="form-control" maxlength="200" value="{{product.publisher}}" required/>
+                </div>
+            </div>
+            </div> 
+            <div class="form-group">
+                <label for="frmProductPublished" class="col-sm-2 control-label">Status</label>
+                <div class="col-sm-6">
+                    <select class="form-control" id="frmProductPublished" name="frmProductPublished">
+                        <option value="true" selected>Published</option>
+                        <option value="false">Draft</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group" id="editor-wrapper">
+                <label for="editor" class="col-sm-2 control-label">Product description</label>
+                <div class="col-sm-10">
+                    <textarea minlength="5" rows="10" name="frmProductDescription" class="form-control" required>{{product.description}}</textarea>
+                </div>
+            </div>
+            <div class="pull-right" style="margin-bottom: 30px">
+                    <button id="frm_edit_product_save" class="btn btn-success" type="submit" >Save</i></button>
+                    <input type="hidden" name="frmProductId" id="frmProductId" value="{{product._id}}" />
+            </div>
+        </div>
+    </form>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
+<script>
+    $(document).ready(function() {
+        $('#editor').summernote({
+            height: 300,
+            minHeight: null
+        });
+    });
+</script>

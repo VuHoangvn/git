@@ -1,0 +1,23 @@
+<div class="col-lg-3">
+    <h2><a href="/">KONOHA</a></h2>
+    <ul class="list-group">
+        <li class="list-group-item"><strong>Products</strong></li>
+        {{!-- {{#ifCond session.isAdmin '===' true}} --}}
+        <li class="list-group-item"><i class="fa fa-plus-square-o fa-icon" aria-hidden="true"></i> &nbsp; <a href="/admin/product/add-product">New</a></li>
+        {{!-- {{/ifCond}} --}}
+        <li class="list-group-item"><i class="fa fa-list fa-icon" aria-hidden="true"></i> &nbsp; <a href="/admin/product/booklist">List</a></li>
+        <li class="list-group-item"><strong>Orders</strong></li>
+        <li class="list-group-item"><i class="fa fa-cube fa-icon" aria-hidden="true"></i> &nbsp; <a href="/admin/order">List</a></li>
+        <li class="list-group-item"><strong>Category</strong></li>
+        <li class="list-group-item"><i class="fa fa-plus-square-o fa-icon" aria-hidden="true"></i> &nbsp; <a href="/admin/category/add-category">New</a></li>
+        {{!-- {{/ifCond}} --}}
+        <li class="list-group-item"><i class="fa fa-list fa-icon" aria-hidden="true"></i> &nbsp; <a href="/admin/category/category_list">List</a></li>
+        {{!-- {{/ifCond}} --}}
+        
+        <li class="list-group-item"><i class="fa fa-user-circle-o fa-icon" aria-hidden="true"></i> &nbsp; <a href="/admin/user/edit">My Account</a></li>
+        {{!-- <li class="list-group-item"><strong>Settings</strong></li>
+        <li class="list-group-item"><i class="fa fa-cog fa-icon" aria-hidden="true"></i> &nbsp; <a href="/admin/settings">General settings</a></li>
+        <li class="list-group-item"><i class="fa fa-bars fa-icon" aria-hidden="true"></i> &nbsp; <a href="/admin/settings/menu">Menu</a></li>
+        <li class="list-group-item"><i class="fa fa-file-o fa-icon" aria-hidden="true"></i> &nbsp; <a href="/admin/settings/pages">Static pages</a></li> --}}
+    </ul>
+</div>
